@@ -15,6 +15,57 @@ HTML_FORM = '''
   /* This CSS rule targets all h1 elements */
   h1 {
     margin-bottom: 20px; /* Adjust 20px to whatever space you want */
+    font-family: Arial, sans-serif; /* Example: common font */
+  }
+
+  /* Class for instructional text */
+  .instructions {
+    font-size: 0.95em; /* Slightly smaller or adjust as needed */
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #333; /* Dark gray */
+    font-family: Arial, sans-serif; /* Example: common font */
+  }
+
+  /* Styling for the results/error headings */
+  .results-heading {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.2em; /* Example size for these subheadings */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styling for the preformatted text block */
+  pre {
+    white-space: pre-wrap;   /* CSS3 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    background-color: #f9f9f9; /* Light background for the transcript */
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-family: monospace;
+  }
+
+  /* Basic styling for the form */
+  form {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  input[type="file"] {
+    margin-right: 10px;
+    margin-bottom: 10px; /* Space below file input if window is narrow */
+  }
+
+  input[type="submit"] {
+    padding: 8px 15px;
+    background-color: #0078d4; /* Example SharePoint-like blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  input[type="submit"]:hover {
+    background-color: #005a9e;
   }
 </style>
 <title>Voicemail Transcriber</title>
@@ -93,3 +144,5 @@ def allow_iframe(response):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
