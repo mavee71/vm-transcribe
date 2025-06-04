@@ -19,11 +19,16 @@ HTML_FORM = '''
 </form>
 {% if transcription %}
   <h2>Transcription:</h2>
-  <pre>{{ transcription }}</pre>
+  <pre style="white-space: pre-wrap; word-wrap: break-word;">
+    {{ transcription }}
+  </pre>
 {% elif error %}
   <h2 style="color:red;">Error:</h2>
-  <pre>{{ error }}</pre>
+  <pre style="white-space: pre-wrap; word-wrap: break-word;">
+    {{ error }}
+  </pre>
 {% endif %}
+
 '''
 
 def transcribe_wav_with_conversion(wav_filepath):
