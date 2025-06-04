@@ -10,9 +10,17 @@ UPLOAD_FOLDER = tempfile.gettempdir()
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 HTML_FORM = '''
-<!doctype html>
+<!doctype HTML>
+<style>
+  /* This CSS rule targets all h1 elements */
+  h1 {
+    margin-bottom: 20px; /* Adjust 20px to whatever space you want */
+  }
+</style>
 <title>Voicemail Transcriber</title>
-<h1>Upload a Voicemail (WAV)</h1>
+<h1>OpX - Voicemail Transcriber (Beta)</h1>
+<h2>Upload a voicemail file (type .wav) >> Click the "Transcribe" button<h2>
+<h2>Allow 10-20 seconds for transcription to complete<h2>
 <form method=post enctype=multipart/form-data>
   <input type=file name=voicemail accept="audio/wav">
   <input type=submit value=Transcribe>
