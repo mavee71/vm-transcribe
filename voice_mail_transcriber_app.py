@@ -68,5 +68,15 @@ def upload_and_transcribe():
                 os.remove(temp_file.name)
     return render_template_string(HTML_FORM, transcription=transcription, error=error)
 
+# Allow this app to be displayed in an iframe (no X-Frame-Options header)
+@app.after_request
+def allow_iframe(response):
+    # Remove any existing X-Frame-Options header
+    response.headers.pop("X-Frame-Options", None)
+    # (Optional) You could also set Content-Security-Policy if needed:
+    # response.headers["Content-Security-Policy"] = "frame-ancestors https://yourtenant.sharepoint.com"
+    return response
+
+
 if __name__ == '__main__':
     app.run(debug=True)
