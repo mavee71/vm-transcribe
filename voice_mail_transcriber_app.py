@@ -89,7 +89,7 @@ HTML_FORM = '''
     Upload a voicemail file (type .wav) &gt;&gt; Click the “Transcribe” button
   </p>
   <p class="instructions">
-    Allow up to 15 seconds for transcription to complete. Voicemail size and connection speed can affect transcription time.
+    Allow up to 20 seconds for transcription to complete. Voicemail size and connection speed can affect transcription time.
   </p>
 
   <form id="transcribe-form" method="post" enctype="multipart/form-data">
