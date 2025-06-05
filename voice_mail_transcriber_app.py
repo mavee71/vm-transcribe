@@ -23,7 +23,7 @@ HTML_FORM = '''
     font-size: 0.95em; /* Slightly smaller or adjust as needed */
     margin-top: 5px;
     margin-bottom: 10px;
-    color: #333; /* Dark gray */
+    color: #0066cc; /* Blue */
     font-family: Arial, sans-serif; /* Example: common font */
   }
 
@@ -67,27 +67,30 @@ HTML_FORM = '''
   input[type="submit"]:hover {
     background-color: #005a9e;
   }
+
 </style>
 <title>Voicemail Transcriber</title>
-<h1>OpX - Voicemail Transcriber (Beta)</h1>
-<h2>Upload a voicemail file (type .wav) >> Click the "Transcribe" button<h2>
-<h2>Allow 10-20 seconds for transcription to complete<h2>
-<form method=post enctype=multipart/form-data>
-  <input type=file name=voicemail accept="audio/wav">
-  <input type=submit value=Transcribe>
-</form>
-{% if transcription %}
-  <h2>Transcription:</h2>
-  <pre style="white-space: pre-wrap; word-wrap: break-word;">
-    {{ transcription }}
-  </pre>
-{% elif error %}
-  <h2 style="color:red;">Error:</h2>
-  <pre style="white-space: pre-wrap; word-wrap: break-word;">
-    {{ error }}
-  </pre>
-{% endif %}
 
+<img src="WAB.png" alt="WAB Logo" style="max-width:180px; display:block; margin-bottom:10px;">
+
+<h1>OpX - Voicemail Transriber (Beta)</h1>
+
+<p class="instructions">Upload a voicemail file (type .wav) &gt;&gt; Click the "Transcribe" button</p>
+<p class="instructions">Allow up to 15 seconds for transcription to complete. Voicemail size and connection speed can affect transcription time.</p>
+
+<form method="post" enctype="multipart/form-data">
+  <label for="voicemailFile">Choose .wav file:</label>
+  <input type="file" id="voicemailFile" name="voicemail" accept="audio/wav">
+  <input type="submit" value="Transcribe">
+</form>
+
+{% if transcription %}
+  <h2 class="results-heading">Transcription:</h2>
+  <pre>{{ transcription }}</pre>
+{% elif error %}
+  <h2 class="results-heading" style="color:red;">Error:</h2>
+  <pre>{{ error }}</pre>
+{% endif %}
 '''
 
 def transcribe_wav_with_conversion(wav_filepath):
