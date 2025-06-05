@@ -71,7 +71,7 @@ HTML_FORM = '''
 </style>
 <title>Voicemail Transcriber</title>
 
-<img src="WAB.png" alt="WAB Logo" style="max-width:180px; display:block; margin-bottom:10px;">
+<img src="{{ url_for('static', filename='WAB.png') }}"  alt="WAB Logo" style="max-width:180px; display:block; margin-bottom:10px;">
 
 <h1>OpX - Voicemail Transriber (Beta)</h1>
 
