@@ -83,7 +83,7 @@ HTML_FORM = '''
     style="max-width:180px; display:block; margin-bottom:10px;"
   >
 
-  <h1>OpX - Voicemail Transcriber (Beta)</h1>
+  <h1>OpX - Voicemail Transcriber</h1>
 
   <p class="instructions">
     Upload a voicemail file (type .wav) &gt;&gt; Click the “Transcribe” button
